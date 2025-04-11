@@ -3,6 +3,7 @@
     <id>com.shinriyo.riverpod-jump-to-provider-for-as</id>
     <name>Riverpod jump to provider for Android Studio</name>
     <vendor email="shinriyo@gmail.com" url="https://shinriyo.hateblo.jp/">shinriyo</vendor>
+    <version>0.0.1</version>
     <idea-version since-build="241" until-build="241.*" />
     <description><![CDATA[
     A plugin that provides navigation features for Riverpod providers in Android Studio.<br>
