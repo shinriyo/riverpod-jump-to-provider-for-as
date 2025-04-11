@@ -10,6 +10,9 @@ version = "0.0.1"
 repositories {
     mavenCentral()
     maven { url = uri("https://cache-redirector.jetbrains.com/intellij-dependencies") }
+    flatDir {
+        dirs("libs")
+    }
 }
 
 intellij {
@@ -23,16 +26,9 @@ intellij {
     plugins.set(listOf(
         "com.intellij.java",
         "org.jetbrains.kotlin",
-        "org.intellij.intelliLang",
         // Dart 241.19416.15 Downloaded und unzipped .jar
         file("libs/dart.jar")
     ))
-}
-
-dependencies {
-    // ❌ Delete these → IntelliJ Plugin manages them
-    // compileOnly("com.jetbrains:intellij-community:241.8102.112")
-    // compileOnly("com.jetbrains.plugins:dart:241.8102.112")
 }
 
 tasks {
