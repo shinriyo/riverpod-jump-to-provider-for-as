@@ -9,6 +9,7 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://cache-redirector.jetbrains.com/intellij-dependencies") }
 }
 
 intellij {
@@ -38,6 +39,7 @@ tasks {
     withType<JavaCompile> {
         sourceCompatibility = "17"
         targetCompatibility = "17"
+        options.isIncremental = true
     }
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions {
@@ -63,11 +65,18 @@ tasks {
     }
 
     runIde {
-        jvmArgs("-Xmx2g")
+        jvmArgs("-Xmx2g", "-XX:+HeapDumpOnOutOfMemoryError")
         autoReloadPlugins.set(false)
     }
 }
 
 kotlin {
     jvmToolchain(17)
+}
+
+// ビルドの安定性を向上させるための設定
+gradle.projectsEvaluated {
+    tasks.withType<JavaCompile> {
+        options.compilerArgs.add("-Xlint:unchecked")
+    }
 }
