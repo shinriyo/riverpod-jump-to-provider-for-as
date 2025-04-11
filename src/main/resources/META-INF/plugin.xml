@@ -25,8 +25,7 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <gotoDeclarationHandler implementation="com.shinriyo.riverpodjumptoproviderforas.RiverpodGotoDeclarationHandler"
-                                order="first"/>
+        <gotoDeclarationHandler implementation="com.shinriyo.riverpodjumptoproviderforas.RiverpodGotoDeclarationHandler" />
     </extensions>
 
 </idea-plugin>
