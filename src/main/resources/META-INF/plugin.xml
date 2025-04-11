@@ -1,30 +1,31 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<?xml version="1.0" encoding="utf-8"?>
 <idea-plugin>
-    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
     <id>com.shinriyo.riverpod-jump-to-provider-for-as</id>
-
-    <!-- Public plugin name should be written in Title Case.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Riverpod-jump-to-provider-for-as</name>
-
-    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
-
-    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <name>Riverpod jump to provider for Android Studio</name>
+    <vendor email="shinriyo@gmail.com" url="https://shinriyo.hateblo.jp/">shinriyo</vendor>
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    A plugin that provides navigation features for Riverpod providers in Android Studio.<br>
+    <br>
+    <b>Key Features:</b>
+    <ul>
+        <li>Jump from provider usage to its definition</li>
+        <li>Jump from provider definition to its usages</li>
+        <li>Support for Riverpod provider syntax</li>
+    </ul>
+    <br>
+    Enhance your Flutter/Dart development workflow with Riverpod by providing quick navigation between provider definitions and usages.
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.lang.dart</depends>
+    <depends>org.intellij.intelliLang</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <gotoDeclarationHandler implementation="com.shinriyo.riverpodjumptoproviderforas.RiverpodGotoDeclarationHandler"/>
     </extensions>
+
 </idea-plugin>
