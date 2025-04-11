@@ -9,22 +9,29 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://www.jetbrains.com/intellij-repository/releases") }
+    maven { url = uri("https://www.jetbrains.com/intellij-repository/snapshots") }
 }
 
 intellij {
-    version.set("2024.1.4") // Dart plugin 251.x に対応する IntelliJ IDEA バージョン
-    type.set("IU") // Dart plugin を使うには Ultimateが必要
+    // .jar acceptable versoin
+    version.set("2024.1.7")
+    // Ultimate version
+    // type.set("IU")
+    // community version
+    type.set("IC")
 
     plugins.set(listOf(
         "com.intellij.java",
         "org.jetbrains.kotlin",
         "org.intellij.intelliLang",
-        file("libs/dart-251.23774.318.zip") // ✅ ローカル zip を使う
+        // Dart 241.19416.15 Downloaded und unziped .jar
+        file("libs/dart.jar")
     ))
 }
 
 dependencies {
-    // ❌ これらは削除する → IntelliJ Pluginが管理するので不要
+    // ❌ Delete these → IntelliJ Plugin manages them
     // compileOnly("com.jetbrains:intellij-community:241.8102.112")
     // compileOnly("com.jetbrains.plugins:dart:241.8102.112")
 }
