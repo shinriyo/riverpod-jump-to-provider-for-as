@@ -25,7 +25,7 @@ intellij {
         "com.intellij.java",
         "org.jetbrains.kotlin",
         "org.intellij.intelliLang",
-        // Dart 241.19416.15 Downloaded und unziped .jar
+        // Dart 241.19416.15 Downloaded und unzipped .jar
         file("libs/dart.jar")
     ))
 }
