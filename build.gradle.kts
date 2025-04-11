@@ -9,8 +9,6 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://www.jetbrains.com/intellij-repository/releases") }
-    maven { url = uri("https://www.jetbrains.com/intellij-repository/snapshots") }
 }
 
 intellij {
