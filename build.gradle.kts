@@ -16,7 +16,7 @@ repositories {
 }
 
 intellij {
-    // .jar acceptable versoin
+    // .jar acceptable version
     version.set("2024.1.7")
     // Ultimate version
     // type.set("IU")
@@ -70,7 +70,7 @@ kotlin {
     jvmToolchain(17)
 }
 
-// ビルドの安定性を向上させるための設定
+// for build stability
 gradle.projectsEvaluated {
     tasks.withType<JavaCompile> {
         options.compilerArgs.add("-Xlint:unchecked")

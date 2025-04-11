@@ -63,15 +63,15 @@ class RiverpodGotoDeclarationHandler : GotoDeclarationHandler {
 
                     return arrayOf(originPsi)
                 } catch (e: ProcessCanceledException) {
-                    // キャンセルされた場合は次のファイルを試す
+                    // if canceled, try next file
                     continue
                 }
             }
         } catch (e: ProcessCanceledException) {
-            // キャンセルされた場合はnullを返す
+            // if canceled, return null
             return null
         } catch (e: Exception) {
-            // その他のエラーはログに出力
+            // other errors are logged
             println("💥 Error in getGotoDeclarationTargets: ${e.message}")
             return null
         }
